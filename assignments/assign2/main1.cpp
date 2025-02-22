@@ -45,9 +45,4 @@ int main() {
 
     linearSearch(arr1, size1, target);
     binarySearch(arr2, size2, target);
-
-
-
-
-
 }
