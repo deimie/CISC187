@@ -8,7 +8,7 @@
 ---
 #### TASK 3 - The following function returns whether or not a capital “X” is present within a string.
 **(a) What is this function’s time complexity regarding Big O Notation?**
-
+The function's time complexity is O(n) since the program must iterate through all of the letters within the string in the worst case scenario where there is no x.
 
 **(b) Then, modify the code to improve the algorithm’s efficiency for best- and average-case scenarios.**
 
