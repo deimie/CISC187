@@ -11,6 +11,18 @@
 The function's time complexity is O(n) since the program must iterate through all of the letters within the string in the worst case scenario where there is no x.
 
 **(b) Then, modify the code to improve the algorithm’s efficiency for best- and average-case scenarios.**
-
+``` cpp
+function containsX(string) {
+    foundX = false;
+    for(let i = 0; i < string.length; i++) { 
+        if (string[i] === "X") {
+          foundX = true;
+          return foundX;
+        }
+    }
+    return foundX; 
+}
+```
+Now, when X is found, the program returns the ```foundX``` variable immediately. Before, the program wouldn't return anything until the entire string had been iterated through.
 
 ---
