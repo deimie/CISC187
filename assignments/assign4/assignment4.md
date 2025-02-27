@@ -26,5 +26,3 @@ function containsX(string) {
 }
 ```
 Now, when X is found, the program returns the ```foundX``` variable immediately. Before, the program wouldn't return anything until the entire string had been iterated through.
-
----
