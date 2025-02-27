@@ -5,7 +5,7 @@ The worst case time complexity for insertion sort is ```O(N^2)``` while the best
 
 ---
 #### TASK 2 - At the start of the insertion sort, the index of the inspected value is set to 1. Change the index of the inspected value and verify that the total number of operations equals 20. Consider the worst-case scenario. Use N=5, where N is the number of elements.
-
+A worst-case scenario array with N=5 would be in decreasing order as such: ```{5, 4, 3, 2, 1}```. The insertion sort always checks the 2nd element first (index 1) since the first index has nothing to its left to compare to. If we checked index 0 first, there is nothing on the left to compare to, so the program will move on without changing the number of total operations.
 
 ---
 #### TASK 3 - The following function returns whether or not a capital “X” is present within a string.
