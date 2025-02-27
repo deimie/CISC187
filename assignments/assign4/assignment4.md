@@ -1,5 +1,7 @@
-#### TASK 1 - Proof that, under the average-case scenario, the insertion sort has a time complexity of O ( N 2 ) . Draw a clear figure and show all the operations clearly.
+#### TASK 1 - Proof that, under the average-case scenario, the insertion sort has a time complexity of O (N^2) . Draw a clear figure and show all the operations clearly.
+![20250226_162056](https://github.com/user-attachments/assets/e3ec30bd-b243-49f5-813d-ba0e0df0024b)
 
+The worst case time complexity for insertion sort is ```O(N^2)``` while the best case is ```O(N)```. In the worst case the two loops will compare N(N-1) times, which becomes ```N^2-N```. Over time, the only signifant term here is ```N^2``` which is why worst case is ```O(N^2)```. When it comes to the average case, we will assume that half of the elements are out of place and require a swap. This will take ```(N*(N-1))/2``` comparisons (half of the worst case). However, since 1/2 is a constant, this term goes away, leaving the time complexity for the average case as ```O(N^2)```.
 
 ---
 #### TASK 2 - At the start of the insertion sort, the index of the inspected value is set to 1. Change the index of the inspected value and verify that the total number of operations equals 20. Consider the worst-case scenario. Use N=5, where N is the number of elements.
