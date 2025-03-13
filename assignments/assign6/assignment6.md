@@ -22,5 +22,72 @@
 | DEQUEUE(Q)   | _ _ 3 8 _ _ |
 
 #### TASK 3 -Rewrite ENQUEUE and DEQUEUE to detect underflow and overflow of a queue. (see Listings 4 & 5 in the book). 
-
+``` cpp
+// Enqueue
+if (Q.tail == Q.head-1) or (Q.head == 1 and Q.tail = Q.length)
+  overflow error
+else
+  Q[Q.tail] = x
+  if Q.tail == Q.length
+      Q.tail = 1
+  else Q.tail = Q.tail + 1
+```
+```cpp
+// Dequeue
+if Q.head == Q.tail
+  underflow error
+else
+  x = Q[Q.head]
+  if Q.head == Q.length
+      Q.head = 1
+  else Q.head = Q.head + 1
+  return x
+```
 #### TASK 4 - A stack allows insertion and deletion of elements at only end, and a queue allows insertion at one end and deletion at the other end, a deque (double-ended queue) allows insertion and deletion at both ends. Write four O ( 1 ) -time procedures to insert elements into and delete elements from both ends of a deque implemented by an array.
+```cpp
+pushFront(Deque<> D, int x) {
+  if (D.front == D.rear + 1) or (D.front == 1 and D.rear = D.length)
+    overflow error
+  else
+    if D.front == 1
+      D.front = D.length
+    else
+      D.front --
+    D[D.front] = x
+}
+
+pushRear(Deque<> D, int x) {
+ if (D.front == D.rear + 1) or (D.front == 1 and D.rear = D.length)
+    overflow error
+  else
+    D[D.rear] = x
+    if D.rear == D.length
+      D.rear = 1
+    else
+      D.rear ++
+}
+ 
+popFront(Deque<> D) {
+  if D.front == D.rear
+    underflow error
+  else
+    x = D[D.front]
+    if D.front == D.length
+      D.front = 1;
+    else
+      D.front ++
+    return x
+}
+  
+popRear(Deque<> D) {
+  if D.front == D.rear
+    underflow error
+  else
+    if D.rear == 1
+      D.rear = D.length
+    else
+      D.rear --
+    x = D[D.rear]
+    return x
+}
+```
