@@ -46,7 +46,7 @@ else
 #### TASK 4 - A stack allows insertion and deletion of elements at only end, and a queue allows insertion at one end and deletion at the other end, a deque (double-ended queue) allows insertion and deletion at both ends. Write four O ( 1 ) -time procedures to insert elements into and delete elements from both ends of a deque implemented by an array.
 ```cpp
 pushFront(Deque<> D, int x) {
-  if (D.rear == D.front - 1)) or (D.front == 1 and D.rear = D.length)
+  if (D.rear == D.front - 1) or (D.front == 1 and D.rear = D.length)
     overflow error
   else
     if D.front == 1
