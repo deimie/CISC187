@@ -11,8 +11,9 @@ class LinkedList {
     Node* head;
     
 public:
-    LinkedList() : head(NULL) {}
-    
+    LinkedList() {
+        head = NULL;
+    }
     void insertFront(int val) {
         Node* newNode = new Node();
         newNode->data = val;
