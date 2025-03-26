@@ -12,3 +12,4 @@
 ```
 
 #### TASK 2 - If a well-balanced binary search tree contains 1,000 values, what is the maximum number of steps it would take to search for a value within it? (1 point)
+A well-balanced binary tree has a search time efficiency of O(log(n)). This means that a BST with 1,000 values would take a maximum of log(1,000) or approximately 10 steps.
