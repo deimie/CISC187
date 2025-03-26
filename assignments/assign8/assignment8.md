@@ -7,8 +7,8 @@
      2     9
       \   / \
        4 6   10
-      / /
-     3 8
+      /  \
+     3    8
 ```
 
 #### TASK 2 - If a well-balanced binary search tree contains 1,000 values, what is the maximum number of steps it would take to search for a value within it? (1 point)
