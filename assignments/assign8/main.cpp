@@ -41,13 +41,28 @@ public:
         }
     }
     
+    // TASK 3
+    int greatestValue() {
+        Node* node = root;
+        while(true) {
+            if (node->right == nullptr) {
+                break;
+            }
+            node = node->right;
+        }
+        
+        return node->data;
+    }
+    
 };
 
 int main() {
     BST tree;
-    int nums[] = {11, 4, 6, 8, 1, 4, 0, 3};
+    int nums[] = {11, 4, 6, 8, 1, 15, 4, 0, 3, 12};
     
     for (int num: nums) {
         tree.insert(num);
     }
+    
+    cout << tree.greatestValue();
 }
