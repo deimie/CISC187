@@ -43,12 +43,12 @@ public:
     
     // TASK 3
     int greatestValue() {
-        Node* node = root;
+        Node* current = root;
         while(true) {
-            if (node->right == nullptr) {
+            if (current->right == nullptr) {
                 break;
             }
-            node = node->right;
+            current = current->right;
         }
         
         return node->data;
