@@ -58,7 +58,7 @@ public:
 
 int main() {
     BST tree;
-    int nums[] = {11, 4, 6, 8, 1, 15, 4, 0, 3, 12};
+    int nums[] = {1, 5, 9, 2, 4, 10, 6, 3, 8};
     
     for (int num: nums) {
         tree.insert(num);
