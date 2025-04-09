@@ -24,6 +24,13 @@
 
 Initial - [55, 22, 34, 10, 2, 99, 68]
 ```
+Initial Heap
+      55
+    /   \
+  22     34
+ / \    /  \
+10  2  99  68
+
 Max Heap
       99
     /   \
@@ -31,7 +38,7 @@ Max Heap
  / \    /  \
 10  2  34  55
 ```
-Pop Elements (Remove root each time)
+Pop Elements (Remove root each time)  
 [99, 68, 55, 34, 22, 10, 2]
 
 
