@@ -5,15 +5,14 @@
 using namespace std;
 
 void bfs(vector<vector<int>> graph, int startNode) {
-    int nodeCount = graph.size();
-    vector<bool> visited(nodeCount, false); // tracks visited nodes with default value "false"
+    vector<bool> visited(graph.size(), false); // tracks visited nodes with default value "false"
     queue<int> q; // for traversing bfs
     
     q.push(startNode);
     visited[startNode] = true;
     
     while(!q.empty()) {
-        // set currentNode to front of queue. pop, print, and repeat.
+        // set currentNode to front of queue. pop, print, and look at all neighbors.
         int currentNode = q.front();
         q.pop();
         cout << currentNode << " ";
@@ -29,6 +28,20 @@ void bfs(vector<vector<int>> graph, int startNode) {
     }
 }
 
+void dfs(vector<vector<int>> graph, int currentNode) {
+    // static visited array elements will persist when called multiple times
+    static vector<bool> visited(graph.size(), false);
+    
+    visited[currentNode] = true;
+    cout << currentNode << " ";
+    
+    for (int neighbor : graph[currentNode]) {
+        if (!visited[neighbor]) {
+            dfs(graph, neighbor);
+        }
+    }
+};
+
 int main() {
     // adjecency list
     vector<vector<int>> graph = {
@@ -42,5 +55,35 @@ int main() {
         {6} // node 7 points to 6
     };
     
+    cout << "BFS from node 0:" << "\n";
+    bfs(graph, 0);
+    
+    cout << "\n\nBFS from node 7:" << "\n"; 
+    bfs(graph, 7);
+    
+    cout << "\n\nDFS from node 0:" << "\n";
+    dfs(graph, 0);
+
+    cout << "\n\nDFS from node 7:" << "\n"; 
+    dfs(graph, 7);
+    
+    cout << flush;
+    
     return 0;
 }
+
+/* output of main:
+
+BFS from node 0:
+0 1 2 3 5 4 
+
+BFS from node 7:
+7 6 
+
+DFS from node 0:
+0 1 2 3 4 5 
+
+DFS from node 7:
+7 6 
+
+*/
