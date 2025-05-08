@@ -57,16 +57,16 @@ function doubleArray1(array) {
 // Version #2
 function doubleArray2(array) {
 	for(let i = 0; i < array.length; i++) {
-  	array[i] *= 2;
-  }
+  		array[i] *= 2;
+	}
 	return array; 
 }
 
 // Version #3
 function doubleArray3(array, index=0) { 
 	if (index >= array.length) { return; }
-  array[index] *= 2;
-  doubleArray3(array, index + 1);
+	array[index] *= 2;
+	doubleArray3(array, index + 1);
 	return array; 
 }
 ```
