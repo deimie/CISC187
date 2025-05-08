@@ -1,15 +1,15 @@
 **Task 1 - Describe the space complexity in terms of Big O.**
 ``` js
 function wordBuilder(array) { 
-		let collection = [];
-		for(let i = 0; i < array.length; i++) { 
-				for(let j = 0; j < array.length; j++) {
-						if (i !== j) {
-								collection.push(array[i] + array[j]);
-						}
-				}
+	let collection = [];
+	for(let i = 0; i < array.length; i++) { 
+		for(let j = 0; j < array.length; j++) {
+			if (i !== j) {
+				collection.push(array[i] + array[j]);
+			}
 		}
-		return collection; 
+	}
+	return collection; 
 }
 ```
 The space complexity of the `wordBuilder` function is O(n^2) because it uses a nested loop to create combinations of words from the input array. The outer loop iterates through each element in the array, and for each element, the inner loop iterates through all elements again, resulting in a quadratic growth in the number of combinations stored in the `collection` array.
@@ -17,11 +17,11 @@ The space complexity of the `wordBuilder` function is O(n^2) because it uses a n
 **Task 2 - Describe the space complexity in terms of Big O.**
 ``` js
 function reverse(array) { 
-		let newArray = [];
-		for (let i = array.length - 1; i >= 0; i--) { 
-				newArray.push(array[i]);
-		}
-		return newArray;
+	let newArray = [];
+	for (let i = array.length - 1; i >= 0; i--) { 
+		newArray.push(array[i]);
+	}
+	return newArray;
 }
 ```
 The space complexity of the `reverse` function is O(n) because it creates a new array (`newArray`) that stores all the elements of the input array in reverse order. The size of `newArray` grows linearly with the size of the input array, resulting in a linear space complexity.
