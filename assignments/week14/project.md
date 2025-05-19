@@ -163,3 +163,48 @@ int main()
     cout << max_product(arr);
 }
 ```
+### Task 5
+``` cpp
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+vector<float> SortTemps(vector<float> temps)
+{
+    // temps are multiplied by 10 for simplicity
+    int min_temp = 970;
+    int max_temp = 990;
+    vector<int> count(21);
+    vector<float> sorted_temps;
+    
+    // count occurences of each temp
+    for (float temp : temps)
+    {
+        int index = (temp * 10) - min_temp;
+        count[index] += 1;
+    }
+    
+    // build sorted array
+    for (int i = 0; i < count.size(); i++)
+    {
+        while (count[i] > 0)
+        {
+            sorted_temps.push_back((min_temp + i) / 10.0f);
+            count[i]--;
+        }
+    }
+    
+    return sorted_temps;
+}
+
+int main()
+{
+    vector<float> temps = {98.6, 98.0, 97.1, 99.0, 98.9, 97.8, 98.5, 98.2, 98.0, 97.1};
+    
+    for (float temp : SortTemps(temps))
+    {
+        cout << temp << " ";
+    }
+}
+```
