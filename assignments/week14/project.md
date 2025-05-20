@@ -240,8 +240,6 @@ int LongestSequence(vector<int> nums)
             }
         }
         
-        
-        
         // set new max
         maxSeq = max(currentSeq, maxSeq);
     }
