@@ -218,30 +218,28 @@ using namespace std;
 
 int LongestSequence(vector<int> nums)
 {
-    int currentSeq;
     int maxSeq = 0;
+    unordered_set<int> numSet(nums.begin(), nums.end()); // build set using nums array
     
-    unordered_set<int> numSet;
-    for (int num : nums)
-        numSet.insert(num);
         
     for (int num : nums)
     {
-        // if num-1 exists, num is not start of sequence
+        // if num-1 doesnt exist num is start of sequence
         if (numSet.find(num - 1) == numSet.end())
         {
             int currentNum = num;
-            currentSeq = 1;
+            int currentSeq = 1;
             
-            while (numSet.find(currentNum) != numSet.end())
+            // while num+1 is found (count sequence length)
+            while (numSet.find(currentNum + 1) != numSet.end())
             {
                 currentNum++;
                 currentSeq++;
             }
+            
+            // set new max
+            maxSeq = max(maxSeq, currentSeq);
         }
-        
-        // set new max
-        maxSeq = max(currentSeq, maxSeq);
     }
     
     return maxSeq;
