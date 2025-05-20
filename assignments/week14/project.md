@@ -208,3 +208,53 @@ int main()
     }
 }
 ```
+### Task 6
+``` cpp
+#include <iostream>
+#include <vector>
+#include <unordered_set>
+
+using namespace std;
+
+int LongestSequence(vector<int> nums)
+{
+    int currentSeq;
+    int maxSeq = 0;
+    
+    unordered_set<int> numSet;
+    for (int num : nums)
+        numSet.insert(num);
+        
+    for (int num : nums)
+    {
+        // if num-1 exists, num is not start of sequence
+        if (numSet.find(num - 1) == numSet.end())
+        {
+            int currentNum = num;
+            currentSeq = 1;
+            
+            while (numSet.find(currentNum) != numSet.end())
+            {
+                currentNum++;
+                currentSeq++;
+            }
+        }
+        
+        
+        
+        // set new max
+        maxSeq = max(currentSeq, maxSeq);
+    }
+    
+    return maxSeq;
+}
+
+int main()
+{
+    vector<int> nums1 = {10, 5, 12, 3, 55, 30, 4, 11, 2};
+    vector<int> nums2 = {19, 13, 15, 12, 18, 14, 17, 11};
+    
+    cout << LongestSequence(nums1) << endl;
+    cout << LongestSequence(nums2) << endl;
+}
+```
